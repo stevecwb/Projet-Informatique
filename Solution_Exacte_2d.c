@@ -67,10 +67,21 @@ double analytical_heat_capacity_2d(double T, int N){
     double Cv = N*kb*(4.0/pi)*pow((beta*J*(1/tanh(2*beta*J))),2)*(K1 - E1 - (1 - pow(tanh(2*beta*J),2))*(pi/2.0 + (2*pow(tanh(2*beta*J),2)-1)*K1));
     return Cv;
 }
+double analytical_magnatization_2d(double T){
+    double J = 1;
+    double kb = 1;
+    double beta = 1.0/(kb*T);
+    if(T < 2.269){
+        return pow((1-pow((sinh(2*beta*J)),-4)),(1.0/8.0));
+    }
+    else{
+        return 0;
+    }    
+}
 int main(){
     int i;
     int N = 1;
-    double table[3][200];
+    double table[4][200];
     // Open a file for writing (you can change "output.txt" to your desired file name)
     FILE *file = fopen("Energy Values 2D 2.csv", "w");
     
@@ -83,13 +94,15 @@ int main(){
         double T = i/10.0;
         double E = analytical_energy_2d(T, N);
         double Cv = analytical_heat_capacity_2d(T, N);
+        double Mg = analytical_magnatization_2d(T);
         table[0][i] = T;
         table[1][i] = E;
         table[2][i] = Cv;
-        printf("%lf\t%lf\t%lf\n", table[0][i],table[1][i], table[2][i]);
+        table[3][i] = Mg;
+        printf("%lf\t%lf\t%lf\t%lf\n", table[0][i],table[1][i], table[2][i], table[3][i]);
 
         // Write the numbers to the file
-        fprintf(file, "%lf, %lf, %lf\n", table[0][i], table[1][i], table[2][i]);
+        fprintf(file, "%lf, %lf, %lf, %lf\n", table[0][i], table[1][i], table[2][i], table[3][i]);
     }
 
     // Close the file
