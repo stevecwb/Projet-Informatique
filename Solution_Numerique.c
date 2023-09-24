@@ -15,14 +15,14 @@ double energie_du_systeme(double J, int N, double matrix[1][N])
 }
 int main()
 {
-    int N = 300;       // nombre de spins
-    int n_iter = 150000; // nombre d'iterations
+    int N = 500;       // nombre de spins
+    int n_iter = 250000; // nombre d'iterations
     double J = 1;      // constant d'Energie generique
     double kb = 1;     // constant de Boltzman
-    double results[3][20];
+    double results[3][100];
 
     // Open a file for writing (you can change "output.txt" to your desired file name)
-    FILE *file = fopen("Energy Values Numerical2.csv", "w");
+    FILE *file = fopen("1D Numerical.csv", "w");
 
     // Check if the file was opened successfully
     if (file == NULL)
@@ -57,8 +57,9 @@ int main()
         }
         printf("\n");
     }*/
-    for (int T = 0; T <= 20; T++)
+    for (int t = 0; t <= 100; t++)
     {
+        double T = t/10.0;
         double matrix[1][N];
         for (int i = 0; i < N; i++)
         {
@@ -132,11 +133,11 @@ int main()
         energie_moyenne = energie_moyenne / n_iter;
         energie_moyenne_carre = energie_moyenne_carre / n_iter;
         double Cv = (1 / (kb * pow(T, 2))) * (energie_moyenne_carre - pow(energie_moyenne, 2));
-        results[0][T] = T;
-        results[1][T] = energie_moyenne / (J * N);
-        results[2][T] = Cv / (kb * N);
+        results[0][t] = T;
+        results[1][t] = energie_moyenne / (J * N);
+        results[2][t] = Cv / (kb * N);
         // Write the numbers to the file
-        fprintf(file, "%lf, %lf, %lf\n", results[0][T], results[1][T], results[2][T]);
+        fprintf(file, "%lf, %lf, %lf\n", results[0][t], results[1][t], results[2][t]);
 
         // printf("\nAverage Energy Value = %lf\n", energie_moyenne / (J * N));
         // printf("\nHeat Capacity = %lf\n", Cv / (kb * N));

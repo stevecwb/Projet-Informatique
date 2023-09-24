@@ -16,16 +16,16 @@ double analytical_heat_capacity_1d(double T){
 
 int main(){
     int i;
-    double table[3][200];
+    double table[3][100];
     // Open a file for writing (you can change "output.txt" to your desired file name)
-    FILE *file = fopen("Energy Values.csv", "w");
+    FILE *file = fopen("1D Analytical.csv", "w");
     
     // Check if the file was opened successfully
     if (file == NULL) {
         printf("Error opening the file.\n");
         return 1; // Exit with an error code
     }
-    for(i=0; i <=200; i++){
+    for(i=0; i <=100; i++){
         double T = i/10.0;
         double E = analytical_energy_1d(T);
         double Cv = analytical_heat_capacity_1d(T);

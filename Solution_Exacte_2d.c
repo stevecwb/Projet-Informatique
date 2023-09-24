@@ -81,16 +81,16 @@ double analytical_magnatization_2d(double T){
 int main(){
     int i;
     int N = 1;
-    double table[4][200];
+    double table[4][100];
     // Open a file for writing (you can change "output.txt" to your desired file name)
-    FILE *file = fopen("Energy Values 2D 2.csv", "w");
+    FILE *file = fopen("2D Analytical.csv", "w");
     
     // Check if the file was opened successfully
     if (file == NULL) {
         printf("Error opening the file.\n");
         return 1; // Exit with an error code
     }
-    for(i=0; i <=200; i++){
+    for(i=0; i <=100; i++){
         double T = i/10.0;
         double E = analytical_energy_2d(T, N);
         double Cv = analytical_heat_capacity_2d(T, N);

@@ -1,85 +1,201 @@
-Courses;Universities;Country;Comments;Choice
-PC Based DAQ in Fluid Dynamics and Thermodynamics (CTU10) ;CTU10;Czech Republic;nice;Yes
-Sports, Building and City Aerodynamics (KUL27) ;KUL27;Belgium;meh;No
-Flow Simulation in Turbomachinery (TUW16BIP) ;TUW16BIP;Austria;not bad;
-Metrology of Electrical Quantities (CTU01) ;CTU01;Czech Republic;meh;
-Design Sprint (CTU04) ;CTU04;Czech Republic;;
-Game Theory (CTU08) ;CTU08;Czech Republic;;
-Introduction to Lean Six Sigma Management (CTU12) ;CTU12;Czech Republic;;
-Company Crisis (CTU13) ;CTU13;Czech Republic;;
-Digital Signal and Image Processing with Applications (CTU15) ;CTU15;Czech Republic;;
-Environmental Technology (CTU16) ;CTU16;Czech Republic;;
-Geometrical Aspects of Spectral Theory (CTU22) ;CTU22;Czech Republic;;
-Publicly owned private spaces (POPS) in Prague - BIP (CTU24BIP) ;CTU24 BIP;Czech Republic;;
-3D Measuring Methods in Transportation (CTU25);CTU25;Czech Republic;;
-Biodépollution (AGROPT02) ;AGROPT02;France;;No
-Bioraffinerie : nouvelles stratégies d'utilisation du végétal (AGROPT03) ;AGROPT03;France;;No
-Changement climatique - enjeux d'une transition vers une... (AGROPT04) ;AGROPT04;France;;No
-Gérer l'eau : problématiques régionales et planétaires (AGROPT11) ;AGROPT11;France;;No
-Les enjeux de l'embryon (AGROPT15) ;AGROPT15;France;;No
-Les marchés financiers (AGROPT16) ;AGROPT16;France;;No
-Neurones: des modèles à la conscience (AGROPT21) ;AGROPT21;France;;No
-Animals in Science: Today's Challenges (AGROPT22) ;AGROPT22;France;;No
-Nutrition en Conditions Extrêmes (AGROPT23) ;AGROPT23;France;;No
-Politique agricole en Europe et aux Etats-Unis. Evolution et... (AGROPT24) ;AGROPT24;France;;No
-Sciences citoyennes. Quand les citoyens produisent du savoir (AGROPT29) ;AGROPT29;France;;No
-Modélisation moléculaire (AGROPT30) ;AGROPT30;France;;No
-RecycleMyPhone (CPT2) ;CPT2;France;;No
-Drug design strategies (CPT3) ;CPT3;France;;No
-Dermatologie et Cosmétologie (CPT4) ;CPT4;France;;No
-Mergers and Acquisition (ENPC01) ;ENPC01;France;;No
-Real estate economics (ENPC02) ;ENPC02;France;;No
-Conceiving eco-districts (ENPC03) ;ENPC03;France;;No
-Uncertainty Quantification in Numerical Simulations (ENPC04) ;ENPC04;France;;No
-Startup Creathon (ENPC05) ;ENPC05;France;;No
-Raw earth : a building material for tomorrow ? (ENPC06) ;ENPC06;France;;No
-Planning the European electricity system: a serious game (ENPC07) ;ENPC07;France;;No
-Smart Materials and Intelligent Processes (ENSAM11BIP) ;ENSAM11BIP;France;;No
-Introduction to Musculoskeletal and Osteoarticular Biomechanics (ENSAM6) ;ENSAM6;France;;No
-Oral scientific presentation / research and bibliographic... (ENSAM9 / UPB) ;ENSAM9 / UPB;France;;No
-Ingénieur en Transition (IOGS1) ;IOGS1;France;;No
-Regional oceanography of the Planetary Ocean (MP07) ;MP07;France;;No
-Physics and Mechanics of Random Media (MP08) ;MP08;France;;No
-Musique, Science et Histoire (MP12) ;MP12;France;;No
-Design, Processing and Functionality of Polymeric Materials... (MP13) ;MP13;France;;No
-Geostatistics (MP16) ;MP16;France;;No
-Circular economy and ecodesign. The urban mine case (MP20) ;MP20;France;;No
-Complex analysis and applications (MP31) ;MP31;France;;No
-Technology and Innovation Strategy (MP32) ;MP32;France;;No
-Introduction to power system analysis (MP33) ;MP33;France;;No
-Image Processing (TP01 Palaiseau) ;TP01 Palaiseau;France;;No
-Managing Communication in an International Context (TP05 Palaiseau) ;TP05 Palaiseau;France;;No
-Emergence in Complex Systems (TP09 Palaiseau) ;TP09 Palaiseau;France;;No
-From cloud datacenters to mobile edge computing (MEC):... (TP20 Palaiseau) ;TP20 Palaiseau;France;;No
-Practice in deep learning (TP40 Palaiseau) ;TP40 Palaiseau;France;;No
-User Experience Design sprint (TP41 Palaiseau) ;TP41 Palaiseau;France;;No
-Mediating international and scientific communication (TP44 Palaiseau) ;TP44 Palaiseau;France;;No
-Formal Methods: Formal specification and verification of systems (TP45 Palaiseau) ;TP45 Palaiseau;France;;No
-Introduction to structural health monitoring (SHM) (TUM 1123-02) ;SHM;Germany;;
-Biomechanics for Impact and Crash Safety (TUM 1123-01) ;TUM 1123-01;Germany;;
-ENSAM /TUD01 Introduction into Finite Elements and Algorithms (ENSAM / TUD01) ;ENSAM / TUD01;Holand;not bad;
-Product and Process Design Concepts in (Bio) Chemical Industries (TUD02) ;TUD02;Holand;;
-Automatic Control of Aerospace Systems (TUD22) ;TUD22;Holand;;
-Offshore Engineering for Renewable Energy (TUD23) ;TUD23;Holand;;
-Danube Bridges in Budapest (BME4) ;BME4;Hungary;;
-Using the geographical information systems for the... (POLI25) ;POLI25;Italy;;
-Where interior design meets fashion. (POLI34) ;POLI34;Italy;;
-Global warming and Ecological Milan! 11th Edition (POLI37) ;POLI37;Italy;;
-Create your own Avatar (POLI45) ;POLI45;Italy;;
-VALUable Machine Learning Hero Agency (POLI46) ;POLI46;Italy;;
-Sound: Hearing and Acoustical Measurements (WUT10) ;WUT10;Poland;;
-Energy Sources, Conversion and Storage (WUT11) ;WUT11;Poland;;
-Beyond the Present: Designing the Future of Educational Spaces (IST 18) ;IST 18;Portugal;;
-Healthy Futures (IST 19) ;IST 19;Portugal;;
-Plasma Science and Technology (IST10) ;IST10;Portugal;;
-Advanced course on Microbial MultiOmics (IST16) ;IST16;Portugal;;
-Madrid and its history through the analysis of the most... (UPM101) ;UPM101;Spain;;
-EXERCISE IS MEDICINE: from theory to practice (UPM126) ;UPM126;Spain;;
-Basic knowledge in construction and facilities in Spain (UPM132) ;UPM132;Spain;;
-Practical Geology (UPM142) ;UPM142;Spain;;
-INTRODUCTION TO TECH DIPLOMACY: THE NEW GEOPOLITICS OF TECHNOLOGY (UPM147) ;UPM147;Spain;meh;
-Big Data and Geo-Data Science: Python Programming for... (UPM155) ;UPM155;Spain;ok;
-LASER BASED ADDITIVE MANUFACTURING (UPM156) ;UPM156;Spain;meh;
-Citizenship laboratory based on mathematics and SDG. (UPM158) ;UPM158;Spain;meh;No
-Bridge (ITU09) ;ITU09;Turkey;meh;No
-;;;;1
+0.000000, -1.000000, -1.#IND00
+0.100000, -1.000000, 0.000001
+0.200000, -0.999909, 0.004540
+0.300000, -0.997458, 0.056418
+0.400000, -0.986614, 0.166201
+0.500000, -0.964028, 0.282603
+0.600000, -0.931110, 0.369541
+0.700000, -0.891373, 0.419293
+0.800000, -0.848284, 0.438148
+0.900000, -0.804455, 0.435620
+1.000000, -0.761594, 0.419974
+1.100000, -0.720696, 0.397188
+1.200000, -0.682262, 0.371194
+1.300000, -0.646482, 0.344415
+1.400000, -0.613357, 0.318262
+1.500000, -0.582783, 0.293495
+1.600000, -0.554600, 0.270476
+1.700000, -0.528625, 0.249327
+1.800000, -0.504672, 0.230033
+1.900000, -0.482560, 0.212503
+2.000000, -0.462117, 0.196612
+2.100000, -0.443188, 0.182219
+2.200000, -0.425628, 0.169182
+2.300000, -0.409310, 0.157366
+2.400000, -0.394119, 0.146644
+2.500000, -0.379949, 0.136902
+2.600000, -0.366709, 0.128036
+2.700000, -0.354316, 0.119953
+2.800000, -0.342695, 0.112571
+2.900000, -0.331780, 0.105817
+3.000000, -0.321513, 0.099626
+3.100000, -0.311838, 0.093939
+3.200000, -0.302710, 0.088708
+3.300000, -0.294083, 0.083886
+3.400000, -0.285920, 0.079433
+3.500000, -0.278185, 0.075315
+3.600000, -0.270847, 0.071500
+3.700000, -0.263876, 0.067960
+3.800000, -0.257247, 0.064669
+3.900000, -0.250935, 0.061606
+4.000000, -0.244919, 0.058751
+4.100000, -0.239178, 0.056085
+4.200000, -0.233696, 0.053593
+4.300000, -0.228454, 0.051261
+4.400000, -0.223439, 0.049074
+4.500000, -0.218635, 0.047022
+4.600000, -0.214030, 0.045094
+4.700000, -0.209612, 0.043280
+4.800000, -0.205371, 0.041572
+4.900000, -0.201295, 0.039962
+5.000000, -0.197375, 0.038442
+5.100000, -0.193604, 0.037006
+5.200000, -0.189972, 0.035648
+5.300000, -0.186472, 0.034362
+5.400000, -0.183097, 0.033144
+5.500000, -0.179841, 0.031989
+5.600000, -0.176697, 0.030892
+5.700000, -0.173661, 0.029850
+5.800000, -0.170725, 0.028860
+5.900000, -0.167887, 0.027918
+6.000000, -0.165140, 0.027020
+6.100000, -0.162481, 0.026165
+6.200000, -0.159906, 0.025349
+6.300000, -0.157410, 0.024571
+6.400000, -0.154991, 0.023828
+6.500000, -0.152644, 0.023117
+6.600000, -0.150366, 0.022438
+6.700000, -0.148155, 0.021788
+6.800000, -0.146008, 0.021165
+6.900000, -0.143921, 0.020569
+7.000000, -0.141893, 0.019997
+7.100000, -0.139921, 0.019449
+7.200000, -0.138003, 0.018923
+7.300000, -0.136136, 0.018417
+7.400000, -0.134319, 0.017932
+7.500000, -0.132549, 0.017465
+7.600000, -0.130825, 0.017017
+7.700000, -0.129145, 0.016585
+7.800000, -0.127507, 0.016169
+7.900000, -0.125911, 0.015769
+8.000000, -0.124353, 0.015383
+8.100000, -0.122833, 0.015012
+8.200000, -0.121350, 0.014653
+8.300000, -0.119902, 0.014307
+8.400000, -0.118488, 0.013973
+8.500000, -0.117107, 0.013651
+8.600000, -0.115758, 0.013340
+8.700000, -0.114439, 0.013039
+8.800000, -0.113150, 0.012748
+8.900000, -0.111889, 0.012467
+9.000000, -0.110656, 0.012195
+9.100000, -0.109450, 0.011931
+9.200000, -0.108270, 0.011676
+9.300000, -0.107114, 0.011429
+9.400000, -0.105983, 0.011190
+9.500000, -0.104876, 0.010958
+9.600000, -0.103792, 0.010734
+9.700000, -0.102729, 0.010516
+9.800000, -0.101688, 0.010305
+9.900000, -0.100668, 0.010100
+10.000000, -0.099668, 0.009901
+10.100000, -0.098688, 0.009707
+10.200000, -0.097726, 0.009520
+10.300000, -0.096783, 0.009338
+10.400000, -0.095859, 0.009161
+10.500000, -0.094951, 0.008989
+10.600000, -0.094061, 0.008821
+10.700000, -0.093187, 0.008659
+10.800000, -0.092329, 0.008500
+10.900000, -0.091487, 0.008346
+11.000000, -0.090659, 0.008197
+11.100000, -0.089847, 0.008051
+11.200000, -0.089049, 0.007909
+11.300000, -0.088265, 0.007770
+11.400000, -0.087495, 0.007636
+11.500000, -0.086738, 0.007505
+11.600000, -0.085994, 0.007377
+11.700000, -0.085263, 0.007252
+11.800000, -0.084543, 0.007131
+11.900000, -0.083836, 0.007012
+12.000000, -0.083141, 0.006896
+12.100000, -0.082457, 0.006784
+12.200000, -0.081784, 0.006674
+12.300000, -0.081122, 0.006566
+12.400000, -0.080471, 0.006462
+12.500000, -0.079830, 0.006359
+12.600000, -0.079199, 0.006259
+12.700000, -0.078578, 0.006162
+12.800000, -0.077966, 0.006066
+12.900000, -0.077364, 0.005973
+13.000000, -0.076772, 0.005882
+13.100000, -0.076188, 0.005793
+13.200000, -0.075613, 0.005706
+13.300000, -0.075047, 0.005621
+13.400000, -0.074489, 0.005538
+13.500000, -0.073939, 0.005457
+13.600000, -0.073397, 0.005377
+13.700000, -0.072863, 0.005300
+13.800000, -0.072337, 0.005224
+13.900000, -0.071819, 0.005149
+14.000000, -0.071307, 0.005076
+14.100000, -0.070803, 0.005005
+14.200000, -0.070306, 0.004935
+14.300000, -0.069816, 0.004866
+14.400000, -0.069333, 0.004799
+14.500000, -0.068856, 0.004734
+14.600000, -0.068386, 0.004669
+14.700000, -0.067922, 0.004606
+14.800000, -0.067465, 0.004545
+14.900000, -0.067014, 0.004484
+15.000000, -0.066568, 0.004425
+15.100000, -0.066129, 0.004367
+15.200000, -0.065695, 0.004310
+15.300000, -0.065267, 0.004254
+15.400000, -0.064844, 0.004199
+15.500000, -0.064427, 0.004145
+15.600000, -0.064015, 0.004092
+15.700000, -0.063608, 0.004041
+15.800000, -0.063207, 0.003990
+15.900000, -0.062810, 0.003940
+16.000000, -0.062419, 0.003891
+16.100000, -0.062032, 0.003843
+16.200000, -0.061650, 0.003796
+16.300000, -0.061273, 0.003750
+16.400000, -0.060900, 0.003704
+16.500000, -0.060532, 0.003660
+16.600000, -0.060168, 0.003616
+16.700000, -0.059809, 0.003573
+16.800000, -0.059454, 0.003531
+16.900000, -0.059103, 0.003489
+17.000000, -0.058756, 0.003448
+17.100000, -0.058413, 0.003408
+17.200000, -0.058074, 0.003369
+17.300000, -0.057739, 0.003330
+17.400000, -0.057408, 0.003292
+17.500000, -0.057081, 0.003255
+17.600000, -0.056757, 0.003218
+17.700000, -0.056437, 0.003182
+17.800000, -0.056121, 0.003146
+17.900000, -0.055808, 0.003111
+18.000000, -0.055498, 0.003077
+18.100000, -0.055192, 0.003043
+18.200000, -0.054890, 0.003010
+18.300000, -0.054590, 0.002977
+18.400000, -0.054294, 0.002945
+18.500000, -0.054001, 0.002913
+18.600000, -0.053712, 0.002882
+18.700000, -0.053425, 0.002852
+18.800000, -0.053141, 0.002821
+18.900000, -0.052861, 0.002792
+19.000000, -0.052583, 0.002762
+19.100000, -0.052308, 0.002734
+19.200000, -0.052036, 0.002705
+19.300000, -0.051767, 0.002677
+19.400000, -0.051501, 0.002650
+19.500000, -0.051237, 0.002623
+19.600000, -0.050976, 0.002596
+19.700000, -0.050718, 0.002570
+19.800000, -0.050462, 0.002544
+19.900000, -0.050209, 0.002519
+20.000000, -0.049958, 0.002494

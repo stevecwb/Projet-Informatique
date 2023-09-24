@@ -20,13 +20,13 @@ double analytical_heat_capacity_1d(double T){
 
 int solution_exacte_1d(double table[3][100]){
     for(int i=0; i <=100; i++){
-        double T = i/100;
+        double T = i/10.0;
         double E = analytical_energy_1d(T);
         double Cv = analytical_heat_capacity_1d(T);
         table[0][i] = T;
         table[1][i] = E;
         table[2][i] = Cv;
-        printf("%lf\t%lf\t%lf\n", table[0][i],table[1][i], table[2][i]);
+        printf("%lf\t%lf\t%lf\n", table[0][i], table[1][i], table[2][i]);
     }
     return 0;
 }
@@ -81,8 +81,9 @@ int methode_ising_1d(int N, int n_iter, double J, double kb, double results[3][1
         }
         printf("\n");
     }*/
-    for (int T = 0; T < 100; T++)
+    for (int t = 0; t < 100; t++)
     {
+        double T = t/10.0;
         double matrix[1][N];
         for (int i = 0; i < N; i++)
         {
@@ -117,11 +118,11 @@ int methode_ising_1d(int N, int n_iter, double J, double kb, double results[3][1
         energie_moyenne = energie_moyenne / n_iter;
         energie_moyenne_carre = energie_moyenne_carre / n_iter;
         double Cv = (1 / (kb * pow(T, 2))) * (energie_moyenne_carre - pow(energie_moyenne, 2));
-        results[0][T] = T;
-        results[1][T] = energie_moyenne / (J * N);
-        results[2][T] = Cv / (kb * N);
+        results[0][t] = T;
+        results[1][t] = energie_moyenne / (J * N);
+        results[2][t] = Cv / (kb * N);
         // Write the numbers to the file
-        fprintf(file, "%lf, %lf, %lf\n", results[0][T], results[1][T], results[2][T]);
+        fprintf(file, "%lf, %lf, %lf\n", results[0][t], results[1][t], results[2][t]);
 
     }
     // Close the file
@@ -131,7 +132,7 @@ int methode_ising_1d(int N, int n_iter, double J, double kb, double results[3][1
 
 
 
-void writeCSV(const char *filename, int rows, int cols, double table[7][100]) {
+void writeCSV(const char *filename, int rows, int cols, double table[rows][cols]) {
     FILE *file = fopen(filename, "w");
 
     if (file == NULL) {
@@ -145,7 +146,7 @@ void writeCSV(const char *filename, int rows, int cols, double table[7][100]) {
     // Write table values to the CSV file
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            fprintf(file, "%d", table[i][j]);
+            fprintf(file, "%lf", table[i][j]);
 
             // Add a comma if it's not the last column
             if (j < cols - 1) {
@@ -173,7 +174,7 @@ int main(){
         double final_matrice[7][100];
         methode_ising_1d(N, n_iter, J, kb, matrice_numerique);
         solution_exacte_1d(matrice_analytique);
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i <= 100; i++){
             final_matrice[0][i] = matrice_analytique[0][i];
             final_matrice[1][i] = matrice_analytique[1][i];
             final_matrice[2][i] = matrice_analytique[2][i];

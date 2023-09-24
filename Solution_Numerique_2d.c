@@ -39,13 +39,13 @@ double magnetization(int M, int N, double matrix[M][N]){
 int main(){
     int M = 20;
     int N = 25;       // nombre de spins
-    int n_iter = 1000000; // nombre d'iterations
+    int n_iter = 500000; // nombre d'iterations
     double J = 1;      // constant d'Energie generique
     double kb = 1;     // constant de Boltzman
-    double results[4][50];
+    double results[4][100];
 
     // Open a file for writing (you can change "output.txt" to your desired file name)
-    FILE *file = fopen("Energy Values Numerical 2d.csv", "w");
+    FILE *file = fopen("2D Numerical.csv", "w");
 
     // Check if the file was opened successfully
     if (file == NULL)
@@ -83,9 +83,9 @@ int main(){
     }*/
     printf("Energy Value = %lf", energie_du_systeme(J, M, N, matrice));
 
-    for (int t = 0; t <= 50; t++)
+    for (int t = 0; t <= 100; t++)
     {
-        double T = t/2.5;
+        double T = t/10.0;
         double matrix[M][N];
         for (int i = 0; i < M; i++)
         {
