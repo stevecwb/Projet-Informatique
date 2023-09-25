@@ -1,31 +1,35 @@
+//Solution Numerique 2 dimensions
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
 
+
 double energie_du_systeme(double J, int M, int N, double matrix[M][N])
 {
+    //Fonction permettant le calcul de l'energie du systeme en 2D, avec en entree J dependant de T,
+    //la taille de la matrice NxM, et la matrice representant le systeme
     double E = 0;
     for (int i = 0; i < M; i++)
     {
         for (int j = 0; j < N-1; j++){
-            E = E + matrix[i][j] * matrix[i][j + 1];
-            //printf("Energy value for i = %d, j = %d : %lf\n", i ,j, E);
+            E = E + matrix[i][j] * matrix[i][j + 1];    //Ajout de la 1re interaction du spin
+
         }
-        E = E + matrix[i][0] * matrix[i][N - 1];
-        //printf("Energy value = %lf\n", E);
+        E = E + matrix[i][0] * matrix[i][N - 1];    //Ajout de la condition limite selon les colonnes
+
     }
     for (int j = 0; j < N; j++){
         for (int i = 0; i < M-1; i++){
-            E = E + matrix[i][j] * matrix[i + 1][j];
-            //printf("Energy value for i = %d, j = %d : %lf\n", i ,j, E);
+            E = E + matrix[i][j] * matrix[i + 1][j];    //Ajout de la 2nde interaction du spin
         }
-        E = E + matrix[0][j] * matrix[M-1][j];
-        //printf("Energy value  = %lf\n", E);
+        E = E + matrix[0][j] * matrix[M-1][j];      //Ajout de la condition limite selon les lignes
+
     }
     return -J * E;
 }
-double magnetization(int M, int N, double matrix[M][N]){
+double aimantation(int M, int N, double matrix[M][N]){
+    //Fonction permettant le calcul de l'aimantation en fonction des dimensions du systeme et du systeme
     double Mg = 0;
     for (int i = 0; i < M; i++)
         {
@@ -37,151 +41,88 @@ double magnetization(int M, int N, double matrix[M][N]){
 }
 
 int main(){
-    int M = 20;
-    int N = 25;       // nombre de spins
+    int M = 20;       //nombre de colonnes
+    int N = 25;       // nombre de lignes
     int n_iter = 500000; // nombre d'iterations
-    double J = 1;      // constant d'Energie generique
-    double kb = 1;     // constant de Boltzman
-    double results[4][100];
+    double J = 1;      // constante d'Energie generique
+    double kb = 1;     // constante de Boltzmann
+    double resultats[4][100]; //Tableau des resultats
 
-    // Open a file for writing (you can change "output.txt" to your desired file name)
-    FILE *file = fopen("2D Numerical.csv", "w");
+    FILE *file = fopen("Solution_Numerique_2D.csv", "w");
 
-    // Check if the file was opened successfully
-    if (file == NULL)
+
+    if (file == NULL)   //Verifie l'ouverture du fichier
     {
         printf("Error opening the file.\n");
-        return 1; // Exit with an error code
+        return 1;
     }
 
-    // Seed the random number generator with the current time
     srand(time(NULL));
-    // Create a matrix of random numbers (-1 or 1)
-    double matrice[M][N];
+
+    double matrice[M][N]; //Creation de la matrice aleatoire representant le systeme
 
     for (int i = 0; i < M; i++)
     {
         for (int j = 0; j < N; j++)
         {
-            // Generate a random number between 0 and 1
-            int random_value = rand() % 2;
 
-            // Map 0 to -1 and 1 to 1
-            matrice[i][j] = (random_value == 0) ? -1.0 : 1.0;
+            int nombre_aleatoire = rand() % 2; //Genere un nombre aleatoire entre 0 et 1
+
+
+            matrice[i][j] = (nombre_aleatoire == 0) ? -1.0 : 1.0; //Change les 0 en -1
         }
-    } // random matrix
+    }
 
-    /*// Display the matrix
-    printf("Initial Matrix: \n");
-    for (int i = 0; i < M; i++)
-    {
-        for (int j = 0; j < N; j++)
-        {
-            printf("%lf ", matrice[i][j]);
-        }
-        printf("\n");
-    }*/
-    printf("Energy Value = %lf", energie_du_systeme(J, M, N, matrice));
 
-    for (int t = 0; t <= 100; t++)
+    printf("Valeur de l'Energie = %lf", energie_du_systeme(J, M, N, matrice)); //Energie initiale du systeme
+
+    for (int t = 0; t <= 100; t++)  //Boucle sur la temperature : 100 points pour une temperature entre 0 et 10 K
     {
         double T = t/10.0;
-        double matrix[M][N];
+        double matrix[M][N]; //Copie � modifier du systeme initial
         for (int i = 0; i < M; i++)
         {
             for(int j = 0; j < N; j++){
                 matrix[i][j] = matrice[i][j];
             }
         }
-        /*for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < N; j++) {
-                // Generate a random number between 0 and 1
-                double random = rand()*1.0/RAND_MAX;
-                    if(random > 0.75){
-                        matrix[i][j] = -1.0;
-                    }
-                    else{
-                    matrix[i][j] = +1.0;
-                    }
-            }
-        }*/
 
-        // printf("Energy Value = %lf", energie_du_systeme(J, N, matrix) / (J * N));
-        double energie_moyenne = 0;
+        double energie_moyenne = 0;         //Valeurs initiales nulles
         double energie_moyenne_carre = 0;
         double Mg = 0;
-        // Monte Carlo Method
-        for (int i = 0; i < n_iter; i++)
+        for (int i = 0; i < n_iter; i++)    //Methode de Monte Carlo
         {
-            int random_spin_lines = rand() % M;
-            int random_spin_columns = rand() % N;
-            double energy_before = energie_du_systeme(J, M, N, matrix);
-            matrix[random_spin_lines][random_spin_columns] *= -1.0; // matrix[0][j] = matrix[0][j]*(-1,0)
-            double energy_after = energie_du_systeme(J, M, N, matrix);
-            double delta_energy = energy_after - energy_before;
-            if (delta_energy > 0)
+            int aleatoire_ligne = rand() % M;         //Changement aleatoire d'un spin
+            int aleatoire_colonne = rand() % N;
+            double energie_avant = energie_du_systeme(J, M, N, matrix);
+            matrix[aleatoire_ligne][aleatoire_colonne] *= -1.0;         //Inversion du spin choisi
+            double energie_apres = energie_du_systeme(J, M, N, matrix);
+            double delta_energie = energie_apres - energie_avant;     //Calcul de la difference d'energie avant et apres inversion du spin
+            if (delta_energie > 0)
             {
-                double P = exp(- delta_energy / (kb * T)); // introduire la probabilite
+                double P = exp(- delta_energie / (kb * T)); // Calcul de la probabilite, dependante de T
                 double random = rand() * 1.0 / RAND_MAX;
                 if (random > P)
                 {
-                    matrix[random_spin_lines][random_spin_columns] *= -1.0;
+                    matrix[aleatoire_ligne][aleatoire_colonne] *= -1.0;
                 }
             }
+
             double energie_aux = energie_du_systeme(J, M, N, matrix);
-            energie_moyenne += energie_aux;
+            energie_moyenne += energie_aux;         //Ajout de l'energie afin de calculer la moyenne
             energie_moyenne_carre += pow(energie_aux, 2);
-            Mg += magnetization(M, N, matrix);
-            /*// Display the matrix
-            printf("Matrix changed of iteration %d : ", i);
-            for (int i = 0; i < 1; i++)
-            {
-                for (int j = 0; j < N; j++)
-                {
-                    printf("%lf ", matrix[i][j]);
-                }
-                printf("\n");
-            }*/
+            Mg += aimantation(M, N, matrix);
         }
-        /*for(int i = 0; i < n_iter; i++){
-            for(int j = 0; j < N; j++){
-                double energy_before = energie_du_systeme(J, N, matrix);
-                printf("energy before %lf\n", energy_before);
-                matrix[0][j] *= -1.0; // matrix[0][j] = matrix[0][j]*(-1,0)
-                printf("element 1 column %d, value = %lf",j,matrix[0][j]);
-                double energy_after = energie_du_systeme(J, N, matrix);
-                printf("energy after %lf\n", energy_after);
-                double delta_energy = energy_after - energy_before;
-                if(delta_energy >0){
-                    double P = exp(-delta_energy/(kb*T)); //introduire la probabilite
-                    double random = rand();
-                    if(random > P){
-                        matrix[0][j] *= -1.0;
-                    }
-                }
-            }
-        }*/
         energie_moyenne = energie_moyenne / n_iter;
         energie_moyenne_carre = energie_moyenne_carre / n_iter;
-        double Cv = (1 / (kb * pow(T, 2))) * (energie_moyenne_carre - pow(energie_moyenne, 2));
-        results[0][t] = T;
-        results[1][t] = energie_moyenne / (J * M*N);
-        results[2][t] = Cv / (kb * M*N);
-        results[3][t] = fabs(Mg/(M*N*n_iter));
-        // Write the numbers to the file
-        fprintf(file, "%lf, %lf, %lf, %lf\n", results[0][t], results[1][t], results[2][t], results[3][t]);
+        double Cv = (1 / (kb * pow(T, 2))) * (energie_moyenne_carre - pow(energie_moyenne, 2));     //Calcul de Cv. La methode par derivee se fait directement sur Python
+        resultats[0][t] = T;
+        resultats[1][t] = energie_moyenne / (J * M*N);
+        resultats[2][t] = Cv / (kb * M*N);
+        resultats[3][t] = fabs(Mg/(M*N*n_iter));
+        fprintf(file, "%lf, %lf, %lf, %lf\n", resultats[0][t], resultats[1][t], resultats[2][t], resultats[3][t]);      //Implementation des resultats dans le tableau
 
-        // printf("\nAverage Energy Value = %lf\n", energie_moyenne / (J * N));
-        // printf("\nHeat Capacity = %lf\n", Cv / (kb * N));
-        /*// Display the matrix
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < N; j++) {
-                printf("%lf ", matrix[i][j]);
-            }
-            printf("\n");
-        }*/
     }
-    // Close the file
     fclose(file);
     return 0;
 }
