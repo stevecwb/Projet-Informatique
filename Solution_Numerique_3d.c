@@ -58,7 +58,7 @@ int main(){
     int M = 10;
     int N = 10;
     int O = 5;     // nombre de spins
-    int n_iter = 10000000; // nombre d'iterations
+    int n_iter = 750000; // nombre d'iterations
     double J = 1;      // constant d'Energie generique
     double kb = 1;     // constant de Boltzman
     double results[4][100];
