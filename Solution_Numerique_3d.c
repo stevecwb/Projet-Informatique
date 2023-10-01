@@ -54,7 +54,7 @@ int main(){
     int M = 10;
     int N = 10;
     int O = 5;
-    int n_iter = 750000; // nombre d'itérations
+    int n_iter = 1000000; // nombre d'itérations
     double J = 1;      // constante d'énergie generique
     double kb = 1;     // constante de Boltzman
     double resultats[4][100];
